@@ -413,7 +413,8 @@ class AdminController extends Controller
       try {
 
          Exam::where('id',$request->exam_id)->update([
-            'marks'=> $request->marks
+            'marks'=> $request->marks,
+            'pass_marks'=>$request->pass_marks
 
          ]);
          return response()->json(['success'=>true,'msg'=>'Marks Updated!']);
