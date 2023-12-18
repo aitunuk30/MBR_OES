@@ -25,11 +25,12 @@
         </div>
 	  		<h1><a href="/dashboard" class="logo">Hi, {{Auth::user()->name}}</a></h1>
         <ul class="list-unstyled components mb-5">
-          <li class="active">
+           <li class="active">
             <a href="/dashboard"><span class="fa fa-book mr-3"></span> Dashboard</a>
           </li>
-
-
+          <li class="active">
+            <a href="{{route('resultDashboard') }}"><span class="fa fa-list-alt mr-3"></span> Results</a>
+          </li>
           <li>
           <a href="/logout"><span class="fa fa-sign-out mr-3"></span> Logout</a>
            </li>
