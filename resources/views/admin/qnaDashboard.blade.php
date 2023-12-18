@@ -63,14 +63,14 @@
                             <input type="text" class="w-100" name="question" placeholder="Enter Question" required>
                         </div>
                     </div>
-                    <div class="row mt-2 answers">
-                        <input type="radio" name="is_correct" class="is_correct">
+
+                    <div class="row mt-2">
                         <div class="col">
-                            <input type="text" class="w-100" name="answers[]" placeholder="Enter Answer" required>
+                            <textarea name ="explanation" class ="w-100" placeholder="Enter your explanation(Optional)"></textarea>
                         </div>
-                        <button class="btn btn-danger removeButton">Remove</button>
                     </div>
                 </div>
+
                 <div class="modal-footer">
                     <span class="error" style="color:red;"></span>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -103,6 +103,13 @@
                             <input type="text" class="w-100" name="question" id = "question"placeholder="Enter Question" >
                         </div>
                     </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <textarea name ="explanation" id ="explanation" class ="w-100" placeholder="Enter your explanation(Optional)"></textarea>
+                        </div>
+                    </div>
+
                 </div>
                 <div class="modal-footer">
                     <span class="editError" style="color:red;"></span>
@@ -351,6 +358,8 @@
                     var qna = data.data[0];
                     $("#question_id").val(qna['id']);
                     $("#question").val(qna['question']);
+                     $("#explanation").val(qna['explanation']);
+
                     $(".editAnswers").remove();
 
 
