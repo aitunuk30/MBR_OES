@@ -87,5 +87,17 @@ class ExamController extends Controller
 
 
     }
+    public function reviewQna(Request $request)
+    {
+        try {
+            $attemptData = ExamAnswer::where('attempt_id',$request->attempt_id)->with(['question','answers'])->get();
+             return response()->json(['success'=>true, ',msg'=>'Q&A Data','data'=>$attemptData]);
+
+        } catch (\Exception $e) {
+            return response()->json(['success'=>false,'msg'=>$e->getMessage()]);
+
+        }
+    }
+
 
 }
